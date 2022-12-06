@@ -1,0 +1,21 @@
+::TITLE
+1o. Trabalho Prático - Agentes
+::DATE
+de 01/11/2022 às 00h00 a 20/12/2022 às 23h59
+::DESCRIPTION
+Implementar um Sistema Multiagente usando algum framework para realizar contas matemáticas:
+Deve existir um agente para cada operação matemática.
+Adição
+Subtração
+Multiplicação
+Divisão
+Exponenciação
+Raiz quadrada
+Pode existir um agente para a decomposição das operações matemáticas.
+Deve-se mostrar o funcionamento independente dos agentes, mostrando a decomposição das tarefas, passo-a-passo.
+Seja pelo prompt de comando ou
+Pela interface gráfica do framework
+Deve ser enviado via SIGAA, juntamente com o código, um relatório com o resultado das implementações mostrando detalhes do funcionamento e implementação.
+Na apresentação da implementação (DIA 20/12/2022) devem ser mostrados além dos tópicos acima relacionados o passo-a-passo de cada interação do algoritmo.
+
+Exemplo: 23 + 12 – 55 + (2 + 4) – 8 / 2^2
