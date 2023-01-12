@@ -19,8 +19,10 @@ class AgentSumCalculator(Agent):
 
     def react(self, message):
         super(AgentSumCalculator, self).react(message)
-        if message.performative == ACLMessage.REQUEST:
-            if message.content == 'CONNECTION':
+        display_message(self.aid.localname, f'Received message from {message.sender.getName()} ::: {id(message.sender)} --- {message.content}')
+        if message.performative == ACLMessage.INFORM:
+            if str(message.content).startswith("CALC:::") == False:
+                display_message(self.aid.localname, f'Message is not valid. Ignoring...')
                 return
             content = message.content
             display_message(self.aid.localname, f'Received message from {message.sender.getName()} ::: {id(message.sender)} --- {message.content}')
@@ -46,9 +48,10 @@ class AgentSubtractionCalculator(Agent):
     
     def react(self, message):
         super(AgentSubtractionCalculator, self).react(message)
-        if message.performative == ACLMessage.REQUEST:
+        if message.performative == ACLMessage.INFORM:
             display_message(self.aid.localname, f'Received message from {message.sender.getName()} ::: {id(message.sender)} --- {message.content}')
-            if message.content == 'CONNECTION':
+            if str(message.content).startswith("CALC:::") == False:
+                display_message(self.aid.localname, f'Message is not valid. Ignoring...')
                 return
             display_message(self.aid.localname, f'Message is valid. Calculating...')
             content = message.content
@@ -74,9 +77,10 @@ class AgentMultiplicationCalculator(Agent):
     
     def react(self, message):
         super(AgentMultiplicationCalculator, self).react(message)
-        if message.performative == ACLMessage.REQUEST:
+        if message.performative == ACLMessage.INFORM:
             display_message(self.aid.localname, f'Received message from {message.sender.getName()} ::: {id(message.sender)} --- {message.content}')
-            if message.content == 'CONNECTION':
+            if str(message.content).startswith("CALC:::") == False:
+                display_message(self.aid.localname, f'Message is not valid. Ignoring...')
                 return
             display_message(self.aid.localname, f'Message is valid. Calculating...')
             content = message.content
@@ -102,9 +106,10 @@ class AgentDivisionCalculator(Agent):
     
     def react(self, message):
         super(AgentDivisionCalculator, self).react(message)
-        if message.performative == ACLMessage.REQUEST:
+        if message.performative == ACLMessage.INFORM:
             display_message(self.aid.localname, f'Received message from {message.sender.getName()} ::: {id(message.sender)} --- {message.content}')
-            if message.content == 'CONNECTION':
+            if str(message.content).startswith("CALC:::") == False:
+                display_message(self.aid.localname, f'Message is not valid. Ignoring...')
                 return
             display_message(self.aid.localname, f'Message is valid. Calculating...')
             content = message.content
@@ -130,9 +135,10 @@ class AgentExponentiationCalculator(Agent):
     
     def react(self, message):
         super(AgentExponentiationCalculator, self).react(message)
-        if message.performative == ACLMessage.REQUEST:
+        if message.performative == ACLMessage.INFORM:
             display_message(self.aid.localname, f'Received message from {message.sender.getName()} ::: {id(message.sender)} --- {message.content}')
-            if message.content == 'CONNECTION':
+            if str(message.content).startswith("CALC:::") == False:
+                display_message(self.aid.localname, f'Message is not valid. Ignoring...')
                 return
             display_message(self.aid.localname, f'Message is valid. Calculating...')
             content = message.content
@@ -158,9 +164,10 @@ class AgentSquareRootCalculator(Agent):
     
     def react(self, message):
         super(AgentSquareRootCalculator, self).react(message)
-        if message.performative == ACLMessage.REQUEST:
+        if message.performative == ACLMessage.INFORM:
             display_message(self.aid.localname, f'Received message from {message.sender.getName()} ::: {id(message.sender)} --- {message.content}')
-            if message.content == 'CONNECTION':
+            if str(message.content).startswith("CALC:::") == False:
+                display_message(self.aid.localname, f'Message is not valid. Ignoring...')
                 return
             display_message(self.aid.localname, f'Message is valid. Calculating...')
             content = message.content
